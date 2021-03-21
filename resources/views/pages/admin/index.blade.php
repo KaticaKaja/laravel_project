@@ -32,7 +32,7 @@
 
             <td>{{ $user->email }}</td>
 
-            <td>{{ $user->created_at }}</td>
+            <td>{{  date("F, d Y h:i", strtotime($user->created_at)) }}</td>
 
             <td>
                 {{-- <a href="{{ route('users.edit', $user) }}" class="btn btn-dark"><i class="fas fa-user-edit"></i> Edit</a> --}}
