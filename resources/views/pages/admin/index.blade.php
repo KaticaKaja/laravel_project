@@ -66,7 +66,7 @@
 
             <td>{{ $user->user->email }}</td>
 
-            <td>{{ $user->logged_in_at }}</td>
+            <td>{{  date("F, d Y h:i", strtotime($user->logged_in_at)) }}</td>
             <tr>
         @endforeach
     </tbody>

@@ -31,7 +31,7 @@
 
             <td>{{ $item->route }}</td>
 
-            <td>{{ $item->created_at }}</td>
+            <td>{{  date("F, d Y h:i", strtotime($item->created_at)) }}</td>
 
             <td>
                 {{-- <a href="{{ route('categories.edit') }}" class="btn btn-dark"><i class="fas fa-post-edit"></i> Add</a> --}}

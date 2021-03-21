@@ -32,7 +32,7 @@
 
             <td>{{ $post->description }}</td>
 
-            <td>{{ $post->created_at }}</td>
+            <td>{{  date("F, d Y h:i", strtotime($post->created_at)) }}</td>
 
             <td class="text-right">
                 <a href="{{ route('posts.edit', $post) }}" class="btn btn-secondary mb-1"><i class="fas fa-post-edit"></i> Edit</a>
