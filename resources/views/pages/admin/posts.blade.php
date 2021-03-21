@@ -18,7 +18,11 @@
         <th>#</th>
         <th>Title</th>
         <th>Description</th>
-        <th>Created_at</th>
+        <th class="d-flex justify-content-between">Created_at
+            <form action="{{ route('posts.sort') }}" method="GET" class="d-inline">
+            @csrf
+            <button type="submit" class="btn text-primary p-0"><i class="fas fa-sort"></i></button>
+        </form></th>
         <th>Actions</th>
       </tr>
     </thead>

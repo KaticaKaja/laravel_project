@@ -18,7 +18,11 @@
         <th>#</th>
         <th>Name</th>
         <th>Email</th>
-        <th>Created_at</th>
+        <th>Created_at
+            <form action="{{ route('users.sort') }}" method="GET" class="d-inline">
+            @csrf
+            <button type="submit" class="btn text-primary p-0"><i class="fas fa-sort"></i></button>
+        </form></th>
         <th>Actions</th>
       </tr>
     </thead>

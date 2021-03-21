@@ -34,6 +34,8 @@ Route::middleware(['admin'])->group(function(){
     // Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    Route::get('/admin/users', [UserController::class, 'sort'])->name('users.sort');
+    Route::get('/admin/posts/sort', [PostController::class, 'sort'])->name('posts.sort');
     Route::delete('/menus/{menu}', [AdminController::class, 'destroyMenu'])->name('menus.destroy');
     Route::delete('/categories/{category}', [AdminController::class, 'destroyCategory'])->name('categories.destroy');
     Route::post('/admin/categories', [AdminController::class, 'storeCat'])->name('categories.store');

@@ -176,4 +176,14 @@ class PostController extends BaseController
         $post->delete();
         return redirect()->route('admin.posts')->with('success', 'Post deleted successfully!');
     }
+
+    public function sort()
+    {
+        $sortOrder = request()->session()->get('sort', 'desc');
+        $this->data['posts'] = Post::orderBy('created_at', $sortOrder)->get();
+        $sortOrder = $sortOrder == 'desc' ? 'asc': 'desc';
+        request()->session()->put('sort', $sortOrder);
+
+        return view('pages.admin.posts', $this->data);
+    }
 }
