@@ -29,6 +29,6 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from TechTalk')->view('pages.main.sendEmail');
+        return $this->subject('Mail from TechTalk')->view('partials.sendEmail');
     }
 }
