@@ -23,7 +23,7 @@ Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/search', [PostController::class, 'search'])->name('posts.search');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.sendEmail');
-Route::get('/author', [HomeController::class, 'author'])->name('author.index');
+Route::get('/author', [AuthorController::class, 'author'])->name('author.index');
 Route::get('/{url?}', [HomeController::class, 'index'])->where('url', ('home'))->name('home.index');
 
 Route::middleware(['admin'])->group(function(){
