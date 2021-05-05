@@ -19,7 +19,7 @@ class PostController extends BaseController
      */
     public function index()
     {
-        $this->data['posts'] = Post::with('categories')->with('user')->paginate(10);
+        $this->data['posts'] = Post::with('categories')->with('user')->paginate(3);
         $this->data['categories'] = Category::all();
         return view('pages.posts.index', $this->data);
     }
