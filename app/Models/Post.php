@@ -22,14 +22,6 @@ class Post extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    // U SLUCAJU DA ADMIN MORA PRVO DA APPROVE-UJE POST
-    // protected static function booted()
-    // {
-    //     static::addGlobalScope('active', function (Builder $builder) {
-    //         $builder->where('approved', true);
-    //     });
-    // }
-
     public static function uploadImage($image){
         $path = Storage::disk('public')->putFile('assets/img', $image);
         $exploded = explode('/', $path);

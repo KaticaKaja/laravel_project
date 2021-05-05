@@ -36,29 +36,7 @@
 <!-- /.row -->
 
 <!-- Pagination -->
-    <ul class="pagination justify-content-center my-5">
-        <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-        </a>
-        </li>
-        <li class="page-item">
-        <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-        <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-        <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-        </a>
-        </li>
-    </ul>
+    {{ $posts->links() }}
 @endsection
 @section('search')
     <!-- Search Widget -->
@@ -67,7 +45,7 @@
         <div class="card-body">
             <form action="{{ route('posts.search') }}" method="get">
                 <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search for...">
+                <input type="text" name="query" class="form-control" placeholder="Search for...">
                 <span class="input-group-append">
                     <button class="btn btn-secondary" type="submit">Go!</button>
                 </span>

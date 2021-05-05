@@ -19,7 +19,7 @@ class PostController extends BaseController
      */
     public function index()
     {
-        $this->data['posts'] = Post::with('categories')->with('user')->get();
+        $this->data['posts'] = Post::with('categories')->with('user')->paginate(10);
         $this->data['categories'] = Category::all();
         return view('pages.posts.index', $this->data);
     }
@@ -27,12 +27,13 @@ class PostController extends BaseController
     public function search(Request $request)
     {
         if($request->has('cat_id')) {
-            $posts = Category::find($request->input('cat_id'))->posts;
+            $posts = Category::find($request->input('cat_id'))->posts()->paginate(3);
         }
-        if($request->has('q')) {
-            $posts = Post::where('title', 'LIKE', '%'.$request->input('q').'%')->get();
+        if($request->has('query')) {
+            $posts = Post::where('title', 'LIKE', '%'.$request->input('query').'%')->paginate(3);
         }
-        $this->data['posts'] = $posts;
+
+        $this->data['posts'] = $posts->withQueryString();
         $this->data['categories'] = Category::all();
         return view('pages.posts.index', $this->data);
     }
