@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col d-flex align-items-center justify-content-center flex-column">
-            <a href="{{ asset('dokumentacija.pdf') }}" class="far fa-file-pdf doc mb-2"></a>
+            <a href="{{ asset('assets/dokumentacija.pdf') }}" class="far fa-file-pdf doc mb-2" target="_blank"></a>
             <p class="m-0 text-white">Copyright &copy; TechTalk 2021</p>
         </div>
         </div>
