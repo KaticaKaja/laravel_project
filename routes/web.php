@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
@@ -23,7 +24,7 @@ Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/search', [PostController::class, 'search'])->name('posts.search');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.sendEmail');
-Route::get('/author', [AuthorController::class, 'author'])->name('author.index');
+Route::get('/author', [AuthorController::class, 'index'])->name('author.index');
 Route::get('/{url?}', [HomeController::class, 'index'])->where('url', ('home'))->name('home.index');
 
 Route::middleware(['admin'])->group(function(){
